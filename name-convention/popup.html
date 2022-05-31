@@ -1,0 +1,140 @@
+<html>
+<head>
+    <script src="popup.js"></script>
+</head>
+<style>
+    body {
+        background-color: #fff6d5;
+        width: 417px;
+        margin: 0;
+    }
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .setup td {
+        vertical-align: middle;
+    }
+
+    .container {
+        position: relative;
+        margin: 10px;
+    }
+
+    .settings {
+        position: relative;
+        padding: 10px;
+        background-color: #4c4737;
+        color: white;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    table td {
+        vertical-align: top;
+    }
+
+    .settings table {
+        color: white;
+    }
+
+    hr {
+        border-bottom: none;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+</style>
+
+
+<body>
+<div id='message' style="color: darkcyan"></div>
+<main class="container">
+    <table class="w-100">
+        <tbody>
+        <tr>
+            <td><img src="icon.png" alt="Name Convention"/></td>
+            <td><strong>Name Convention</strong> is a generator of the branch name, commit message, and merge request
+                description based on JIRA issue page
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table class="w-100 setup">
+        <tbody>
+        <tr>
+            <td>
+                <label>Type</label>
+
+                <select name="mType" id="mType">
+                    <option value="feat">feat</option>
+                    <option value="fix">fix</option>
+                </select>
+            </td>
+            <td>
+                <label for="scope">Scope</label>
+                <select name="scope" id="scope">
+                    <option value="app" selected>app</option>
+                    <option value="events">events</option>
+                </select>
+            </td>
+            <td style="text-align: right">
+                <button id="settings-toggle">Settings</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <p>
+        <label for="branch">Branch name</label>
+        <input class="w-100" id="branch" type="text"/>
+    </p>
+    <p>
+        <label for="commit">Commit message</label>
+        <input class="w-100" id="commit" type="text"/>
+    </p>
+    <p>
+        <label for="description">Merge request description</label>
+        <textarea class="w-100" name="description" id="description" rows="10"></textarea>
+    </p>
+</main>
+
+<div class="settings" id="settings-box" hidden>
+    <table class="w-100">
+        <tbody>
+        <tr>
+            <td>
+                <label for="reviewers">Reviewers</label>
+                <textarea class="w-100" name="reviewers" id="reviewers" rows="5"></textarea>
+            </td>
+            <td>
+                <label for="scope-list">Scope list</label>
+                <textarea class="w-100" name="scope-list" id="scope-list" rows="5"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <label for="path">Path to JIRA issues</label>
+                <input class="w-100" name="path" id="path" placeholder="https://secgen.atlassian.net/browse/"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: right">
+                <button id="save-settings">Save settings</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+</body>
+</html>
