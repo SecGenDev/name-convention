@@ -3,7 +3,6 @@
   "version": "1.1",
   "description": "Naming convention is a generator of the branch name, commit message, and merge request description based on JIRA issue page.",
   "permissions": [
-    "declarativeContent",
     "storage",
     "activeTab",
     "scripting"
@@ -20,6 +19,6 @@
   },
   "manifest_version": 3,
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
-  } 
+    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline'"
+  }
 }
